@@ -1,0 +1,23 @@
+{
+  "name": "profound-server",
+  "version": "0.0.1",
+  "description": "This is the playground for my project \"profound\". The server.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxkhr/profound-server.git"
+  },
+  "author": "Alexander Kehr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alxkhr/profound-server/issues"
+  },
+  "homepage": "https://github.com/alxkhr/profound-server#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
