@@ -9,4 +9,4 @@ This is the playground for my project "profound". The server.
 
 # launch
 
-- ~~~npm run start~~~
+- ```npm run start```
