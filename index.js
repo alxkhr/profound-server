@@ -1,15 +1,15 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
 app.get('/', (request, response) => {
-  response.send('Hello i am using Express!')
-})
+  response.json({ foo: 'bar' });
+});
 
 app.listen(port, (err) => {
   if (err) {
-    return console.log('some error happened', err)
+    return console.log('some error happened', err);
   }
 
-  console.log(`server is listening on ${port}`)
-})
+  console.log(`server is listening on ${port}`);
+});
