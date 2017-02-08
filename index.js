@@ -15,12 +15,13 @@ const exampleFliers = [
 ];
 
 function randomFliers() {
-  const temp = exampleFliers.clone();
+  const temp = exampleFliers.slice();
   const ret = [];
   let i = 0;
   while (i < amountOfFliersToReturn) {
     const randomIndex = Math.floor(Math.random() * temp.length);
-    ret.push(temp.splice(randomIndex, 1));
+    ret.push(temp[randomIndex]);
+    temp.splice(randomIndex, 1)
     i++;
   }
   return ret;
