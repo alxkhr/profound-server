@@ -6,7 +6,7 @@ const pgAcc = 'postgres://ffznakpyslprec:d20bf2c4d028e8cae4e6e6f144f3abeb1cb5140
 
 const amountOfFliersToReturn = 3;
 
-app.get('/fliers', (request, response) => {
+app.get('/discover', (request, response) => {
   pg.connect(pgAcc, function (err, client, done) {
     if (err) {
       return console.error('Could not connect to database.', err)
@@ -16,17 +16,16 @@ app.get('/fliers', (request, response) => {
       if (err) {
         return console.error('Error in query.', err)
       }
-      console.log(result.rows);
       const temp = result.rows.slice(); // TODO is this needed for immutability?
-      const ret = [];
+      const fliers = [];
       let i = 0;
       while (i < amountOfFliersToReturn) {
         const randomIndex = Math.floor(Math.random() * temp.length);
-        ret.push(temp[randomIndex]);
+        fliers.push(temp[randomIndex]);
         temp.splice(randomIndex, 1)
         i++;
       }
-      response.json({ fliers: randomFliers() });
+      response.json({ fliers });
     });
   });
 });
